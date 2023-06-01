@@ -12,24 +12,27 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
 	
 	public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log("1");
 		if (eventData.pointerDrag != null)
 		{
-            vietasZRot = GetComponent<RectTransform>().transform.eulerAngles.z;
-            velkObjZRot = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
-
-            rotacijasStarpiba = Mathf.Abs(velkObjZRot - vietasZRot);
-
-            velkObjIzm = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
-            vietasIzm = GetComponent<RectTransform>().localPosition;
-
-            xIzmeruStarp = Mathf.Abs(velkObjIzm.x - vietasIzm.x);
-            yIzmeruStarp = Mathf.Abs(velkObjIzm.y - vietasIzm.y);
+            Debug.Log("2");
 
             if (eventData.pointerDrag.tag.Equals(tag))
 			{
-				
-				if ((rotacijasStarpiba <= 10 || (rotacijasStarpiba >= 350 && rotacijasStarpiba <= 360))
-                   && (xIzmeruStarp <= 0.3 && yIzmeruStarp <= 0.3))
+                vietasZRot = GetComponent<RectTransform>().transform.eulerAngles.z;
+                velkObjZRot = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
+
+                rotacijasStarpiba = Mathf.Abs(velkObjZRot - vietasZRot);
+
+                vietasIzm = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
+                velkObjIzm = GetComponent<RectTransform>().localScale;
+
+                xIzmeruStarp = Mathf.Abs(velkObjIzm.x - vietasIzm.x);
+                yIzmeruStarp = Mathf.Abs(velkObjIzm.y - vietasIzm.y);
+                Debug.Log("Rotacijas starpiba: " + rotacijasStarpiba + " x izmera starpiba: " + xIzmeruStarp + " y izmera starpiba: " + yIzmeruStarp);
+
+                if ((rotacijasStarpiba <= 6 || (rotacijasStarpiba >= 354 && rotacijasStarpiba <= 360))
+                   && (xIzmeruStarp <= 0.1 && yIzmeruStarp <= 0.1))
                 {
 					objektuSkripts.vaiIstajaVieta = true;
 					eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
@@ -37,7 +40,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
 					eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
 
 					eventData.pointerDrag.GetComponent<RectTransform>().localScale = GetComponent<RectTransform>().localScale;
-
+                   
                     switch (eventData.pointerDrag.tag)
                     {
                         case "Atkritumi":
