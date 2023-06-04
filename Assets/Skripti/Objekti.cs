@@ -16,6 +16,8 @@ public class Objekti : MonoBehaviour {
 	public GameObject Traktors1;
 	public GameObject Traktors2;
 	public GameObject ugunsdzesejs;
+	public GameObject izkartne;
+	public float score = 0;
 
 	[HideInInspector]
 	public Vector2 atkrMKoord;
@@ -66,5 +68,6 @@ public class Objekti : MonoBehaviour {
         trak2Koord = Traktors2.GetComponent<RectTransform>().localPosition;
         ugunsKoord = ugunsdzesejs.GetComponent<RectTransform>().localPosition;
     }
+
 	
 }
