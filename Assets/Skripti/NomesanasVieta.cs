@@ -37,9 +37,11 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
                    && (xIzmeruStarp <= 0.1 && yIzmeruStarp <= 0.1))
                 {
 					objektuSkripts.vaiIstajaVieta = true;
+					//kad objekts novietots pareizajā vietā, score mainigajam tiek piešķirta viena vērtība
 					objektuSkripts.score += 1;
+					//Score vertība tiek izvadīta teksta objektā
 					objektuSkripts.points.text = objektuSkripts.score.ToString()+"/12";
-					Debug.Log (objektuSkripts.score);
+
 
 					eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
@@ -146,7 +148,10 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
                 }
             }
 		}
+		//kad visas mašīnas ir vietā, tad tiek izvadīts beigu ekrāns
+		//Tiek atskaņots uzvaras soundEfekts
 		if(objektuSkripts.score ==2){
+			objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[13]);
 			objektuSkripts.izkartne.SetActive (true);
 
 		}
