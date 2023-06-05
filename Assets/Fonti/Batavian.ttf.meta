@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bfedd83b475c43c49b2aa17a33da0a89
+timeCreated: 1685949246
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Batavian
+  fontNames:
+  - Batavian
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

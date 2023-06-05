@@ -10,6 +10,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
 	public Objekti objektuSkripts;
 
 
+
 	
 	public void OnDrop(PointerEventData eventData)
     {
@@ -37,6 +38,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
                 {
 					objektuSkripts.vaiIstajaVieta = true;
 					objektuSkripts.score += 1;
+					objektuSkripts.points.text = objektuSkripts.score.ToString()+"/12";
 					Debug.Log (objektuSkripts.score);
 
 					eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
@@ -146,7 +148,9 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
 		}
 		if(objektuSkripts.score ==2){
 			objektuSkripts.izkartne.SetActive (true);
+
 		}
+
         
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Objekti : MonoBehaviour {
 
@@ -17,7 +18,12 @@ public class Objekti : MonoBehaviour {
 	public GameObject Traktors2;
 	public GameObject ugunsdzesejs;
 	public GameObject izkartne;
+	public GameObject zvaigzne1;
+	public GameObject zvaigzne2;
+	public GameObject zvaigzne3;
 	public float score = 0;
+	public Text points;
+
 
 	[HideInInspector]
 	public Vector2 atkrMKoord;
