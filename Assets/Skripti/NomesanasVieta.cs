@@ -150,7 +150,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler {
 		}
 		//kad visas mašīnas ir vietā, tad tiek izvadīts beigu ekrāns
 		//Tiek atskaņots uzvaras soundEfekts
-		if(objektuSkripts.score ==2){
+		if(objektuSkripts.score ==12){
 			objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[13]);
 			objektuSkripts.izkartne.SetActive (true);
 
